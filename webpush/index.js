@@ -4,7 +4,7 @@ $(document).ready(function(){
     if ("serviceWorker" in navigator &&
         (window.location.protocol === "https:" || isLocalhost)) {
         // ServiceWorker 登録
-        navigator.serviceWorker.register("service_worker.js").then(
+        navigator.serviceWorker.register("/webpush/service_worker.js").then(
             function (registration) {
                 if (typeof registration.update == "function") {
                     console.log('registration update');
@@ -73,7 +73,7 @@ $(document).ready(function(){
     // プッシュサーバに購読登録 → AP サーバに送信
     function subscribe() {
         console.log('subscribe');
-        navigator.serviceWorker.getRegistration("service_worker.js").then(function(swr) {
+        navigator.serviceWorker.getRegistration("/webpush/service_worker.js").then(function(swr) {
             swr.pushManager.getSubscription().then(function(subscription){
                 if (!subscription) {
                     var serverPublicKey = "BIAFhwtljl0lPkvqINDHAWrplCjfi4MTt0V3VuK-FHfPxKF_1SmgRmFCip74Zk_7z5O88rMqKkYynhuuuuh_tYI";
@@ -102,7 +102,7 @@ $(document).ready(function(){
 
     function unsubscribed() {
         console.log('unsubscribed');
-        navigator.serviceWorker.getRegistration("service_worker.js").then(function(swr) {
+        navigator.serviceWorker.getRegistration("/webpush/service_worker.js").then(function(swr) {
             swr.pushManager.getSubscription().then(
                 function(subscription) {
                     if (!subscription ) {

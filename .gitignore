@@ -1,0 +1,46 @@
+# Ignore netbeans folder
+nbproject/*
+
+# MAC
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Eclipse project files
+/.cache
+.project
+/.settings
+.buildpath
+
+# Vagrant
+.vagrant
+
+# PhpStorm
+.idea
+
+# Visual Studio Code
+.vscode
+
+.editorconfig
+.travis.yml
+build/*
+CONTRIBUTING.md
+
+# Go Vendor
+glide.lock
+vendor
+
+# Log
+*.log
+
+# pem
+*.pem
+*.key
+*.pub
+pid
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

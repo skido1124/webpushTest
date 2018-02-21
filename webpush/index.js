@@ -109,7 +109,7 @@ $(document).ready(function(){
                         return;
                     }
 
-                    //sendSubscriptionToServerForDelete(subscription);
+                    sendSubscriptionToServerForDelete(subscription);
 
                     subscription.unsubscribe().then(function(successful) {
                         console.log('success');
@@ -140,17 +140,17 @@ $(document).ready(function(){
                 PushManager.supportedContentEncodings.includes('aes128gcm') ? 'aes128gcm' : 'aesgcm';
         }
 
-        $.ajax({
-            type: "POST",
-            url: "/notification_web_push_keys/ajax_post_webpush_keys",
-            dataType: "json",
-            cache: false,
-            data: data
-        }).done(function(){
-            console.log('api success');
-        }).fail(function(){
-            console.warn('api failed');
-        });
+        //$.ajax({
+        //    type: "POST",
+        //    url: "/notification_web_push_keys/ajax_post_webpush_keys",
+        //    dataType: "json",
+        //    cache: false,
+        //    data: data
+        //}).done(function(){
+        //    console.log('api success');
+        //}).fail(function(){
+        //    console.warn('api failed');
+        //});
     }
 
     function sendSubscriptionToServerForDelete(subscrption) {

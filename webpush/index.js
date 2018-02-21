@@ -84,8 +84,8 @@ $(document).ready(function(){
                         applicationServerKey: key
                     }).then(
                         function (subscription) {
-                            console.log(subscription);
-                            // return sendSubscriptionToServer(subscription);
+                            //console.log(subscription);
+                            return sendSubscriptionToServer(subscription);
                         }
                     ).catch(function (e) {
                         if (Notification.permission == "denied") {
